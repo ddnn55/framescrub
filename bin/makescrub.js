@@ -20,12 +20,16 @@ var sequenceName = (() => {
 tmp.dir(function _tempDirCreated(err, intermediateDir, cleanupCallback) {
   if (err) throw err;
  
-  console.log("Storing intermediates in ", intermediateDir);
+  console.log("Storing intermediates in " + intermediateDir);
 
   function deleteIntermediates() {
-	del(path.join(intermediateDir, '*.jpg')).then(paths => {
-	    console.log('Deleted files and folders:\n', paths.join('\n'));
+	del(path.join(intermediateDir, '*.jpg'), {/* allow outside CWD */ force:true}).then(paths => {
+	    // console.log('Deleted files and folders:\n', paths.join('\n'));
 	    cleanupCallback();
+	    console.log('Deleted intermediates');
+	}).catch((err) => {
+		console.error('Error deleting intermediates:');
+		console.error(err);
 	});
   	
   }
