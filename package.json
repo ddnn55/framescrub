@@ -8,6 +8,7 @@
   },
   "author": "david.stolarsky@gmail.com",
   "devDependencies": {
+    "del": "^2.2.2",
     "img2data": "^1.0.3",
     "os-tmpdir": "^1.0.2",
     "tmp": "0.0.31",
