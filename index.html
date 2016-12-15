@@ -1,0 +1,83 @@
+<!doctype html>
+<head>
+<link rel="stylesheet" href="frames.css"/>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+.sequence {
+/*	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;*/
+	background-size: cover;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+}
+/*.spacer {
+	position: absolute;
+	z-index: -1;
+	width: 1px;
+	top: 0;
+	left: 0;
+	height: 1000px;
+}*/
+</style>
+</head>
+
+<div class="sequence frame01"></div>
+<div class="spacer"></div>
+
+<script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+<script src="node_modules/sprintf/lib/sprintf.js"></script>
+<script>
+var frameCount = 67;
+
+var controller = new ScrollMagic.Controller();
+var sequenceEl = document.querySelector('.sequence');
+new ScrollMagic.Scene({
+        duration: 4000,    // the scene should last for a scroll distance of 100px
+        offset: 0        // start this scene after scrolling for 50px
+    })
+    .setPin(".sequence") // pins the element for the the scene's duration
+  	.on('progress', function(event) {
+  		// console.log(event.progress);
+  		var frameIndex = Math.floor(Math.max(0, Math.min(event.progress, 0.99999999)) * frameCount);
+  		var frameClassName = sprintf('frame%02d', frameIndex+1);
+  		sequenceEl.setAttribute('class', 'sequence ' + frameClassName);
+  		console.log(frameClassName);
+  	})
+    .addTo(controller); // assign the scene to the controller
+
+
+
+
+
+// var last_known_scroll_position = 0;
+// var ticking = false;
+
+// function doSomething(scroll_pos) {
+// 	var h = document.documentElement, 
+// 	    b = document.body,
+// 	    st = 'scrollTop',
+// 	    sh = 'scrollHeight';
+
+// 	var percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+// 	console.log(percent);
+// }
+
+// window.addEventListener('scroll', function(e) {
+//   last_known_scroll_position = window.scrollY;
+//   if (!ticking) {
+//     window.requestAnimationFrame(function() {
+//       doSomething(last_known_scroll_position);
+//       ticking = false;
+//     });
+//   }
+//   ticking = true;
+// });
+</script>
