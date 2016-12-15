@@ -8,7 +8,10 @@
   },
   "author": "david.stolarsky@gmail.com",
   "devDependencies": {
-    "img2data": "^1.0.3"
+    "img2data": "^1.0.3",
+    "os-tmpdir": "^1.0.2",
+    "tmp": "0.0.31",
+    "yargs": "^6.5.0"
   },
   "dependencies": {
     "scrollmagic": "^2.0.5",
