@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "makescrub": "./bin/makescrub.js"
+  },
   "author": "david.stolarsky@gmail.com",
   "devDependencies": {
     "del": "^2.2.2",
@@ -15,6 +18,7 @@
     "yargs": "^6.5.0"
   },
   "dependencies": {
+    "mkdirp": "^0.5.1",
     "scrollmagic": "^2.0.5",
     "sprintf": "^0.1.5"
   }
