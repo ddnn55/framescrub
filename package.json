@@ -10,14 +10,12 @@
     "makescrub": "./bin/makescrub.js"
   },
   "author": "david.stolarsky@gmail.com",
-  "devDependencies": {
+  "dependencies": {
     "del": "^2.2.2",
     "img2data": "^1.0.3",
     "os-tmpdir": "^1.0.2",
     "tmp": "0.0.31",
-    "yargs": "^6.5.0"
-  },
-  "dependencies": {
+    "yargs": "^6.5.0",
     "mkdirp": "^0.5.1",
     "scrollmagic": "^2.0.5",
     "sprintf": "^0.1.5"
